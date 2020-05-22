@@ -9,6 +9,7 @@
     <link href="<?php echo UPP_ASSETS?>css/helper.css" rel="stylesheet">
     <link href="<?php echo UPP_ASSETS?>css/fonts.css" rel="stylesheet">
     <link href="<?php echo UPP_ASSETS?>css/style.css" rel="stylesheet">
+    <link href="<?php echo UPP_ASSETS?>css/custom.css" rel="stylesheet">
 </head>
 <body>
 <!-- Preloader - style you can find in spinners.css -->

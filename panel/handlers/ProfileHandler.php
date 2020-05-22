@@ -1,15 +1,1 @@
-<?php 
-include 'Handler.php';
-include UPP_PATH.'view.php';
-
-class Profile extends Handler{
-    public function __construct(){
-    }
-
-    public function index(){
-
-        view::load('panel/profile/index');
-
-        
-    }
-}
+<?phpinclude 'Handler.php';include UPP_PATH.'view.php';class Profile extends Handler{    public function __construct()    {        add_action('set_data', array($this, 'update_data'));        parent::__construct();    }    public function index()    {        $params = $this->params();        $this->save_data();        view::load('panel/profile/index', $params);    }    private function params()    {        $params = [            'user_name' => $this->NAME,            'user_email' => $this->EMAIL,            'user_pass' => $this->PASS        ];        return $params;    }    private function save_data()    {        if (isset($_POST['saveData'])) {            do_action('set_data');        }    }    public function update_data()    {        $user_data = array(            'ID' => $this->ID,            'display_name' => apply_filters('pre_user_display_name', $_POST['userFullName']),             'user_pass' => apply_filters('pre_user_pass', $_POST['userPassword'])        );        wp_update_user($user_data);    }}

@@ -1,33 +1,28 @@
 <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-title">
-                            <h4>لیست کاربران </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>نام و نام خانوادگی</th>
-                                        <th>ایمیل</th>
-                                        <th>تاریخ ثبت نام</th>
-                                        <th>وضعیت</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>مهرداد سامی</td>
-                                        <td>msaami@gmail.com</td>
-                                        <td>۱۳۹۷/۰۳/۲۲</td>
-                                        <td><span class="badge badge-primary">فعال</span></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+    <div class="col-md-12">
+        <div class="basic-form p-10">
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="userFullName">نام و نام خانوادگی</label>
+                    <input id="userFullName" name="userFullName" type="text" value="<?php echo $user_name?>"
+                           class="form-control input-default hasPersianPlaceHolder"
+                    >
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="userEmail">آدرس ایمیل</label>
+                    <input id="userEmail" name="userEmail" type="text" value="<?php echo $user_email?>"
+                           class="form-control input-default hasPersianPlaceHolder" autocomplete="off" disabled>
+                </div>
+                <div class="form-password">
+                    <lable for="pass">رمز عبور</lable>
+                    <input id="pass" type="text" name="userPassword" value="<?php echo $user_pass?>"
+                           class="form-control input-default hasPersianPlaceHolder" />
+                </div>
+                <div class="form-group m-t-20">
+                    <button type="submit" name="saveData" class="btn btn-primary m-b-10 m-l-5">ثبت اطلاعات
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
